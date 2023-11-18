@@ -20,8 +20,6 @@ jobs:
 
       - name: Build Tag and push Docker Image
         env:
-          JF_URL: ${{ secrets.JF_URL }}
-          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
           IMAGE_NAME: mydadisalive.jfrog.io/docker/jfrog-docker-example-image:${{ github.run_number }}
         run: |
           jf docker build -t $IMAGE_NAME .
