@@ -23,6 +23,8 @@ jobs:
           IMAGE_NAME: mydadisalive.jfrog.io/docker/jfrog-docker-example-image:${{ github.run_number }}
         run: |
           jf docker build -t $IMAGE_NAME .
+          echo "$JF_URL"
+          echo "$JF_ACCESS_TOKEN"
           jf docker push $IMAGE_NAME
           
       - name: Publish Build info With JFrog CLI
